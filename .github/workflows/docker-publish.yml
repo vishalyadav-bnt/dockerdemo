@@ -20,7 +20,7 @@ jobs:
           distribution: 'microsoft'
 
       - name: Make gradlew executable
-        run: chmod +x Demo/gradlew
+        run: chmod +x dockerdemo/gradlew
 
       - name: Build the JAR file
         run: cd dockerDemo && ./gradlew build
