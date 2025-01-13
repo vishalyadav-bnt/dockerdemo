@@ -55,4 +55,4 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
