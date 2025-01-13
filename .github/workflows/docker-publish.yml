@@ -51,8 +51,12 @@ jobs:
         run: |
           IMAGE_VERSION=$(date +'%Y%m%d%H%M%S')  
           docker tag ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:latest ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
+          docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
           echo "Image tagged as ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION"
 
-      - name: Push Docker image
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
+      # - name: Push Docker image
+      #   run: |
+      #     docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
+
+      - name: Log out from Docker Hub
+        uses: docker/logout-action@v3
