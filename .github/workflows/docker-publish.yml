@@ -22,8 +22,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x dockerDemo/gradlew
 
-      - name: Build the JAR file
-        run: cd dockerDemo && ./gradlew build
+      - name: Build with Gradle
+        run: |
+          cd dockerDemo
+          ./gradlew clean build
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
