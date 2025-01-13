@@ -59,4 +59,4 @@ jobs:
       #     docker push ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:$IMAGE_VERSION
 
       - name: Log out from Docker Hub
-        uses: docker/logout-action@v3
+        uses: docker/logout-action@v1
