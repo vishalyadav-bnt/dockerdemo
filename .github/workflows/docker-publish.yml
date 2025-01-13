@@ -29,9 +29,11 @@ jobs:
           
       - name: Ensure JAR file exists
         run: |
-          if [ ! -f dockerDemo/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar ]; then
-            echo "JAR file not found!"
-            exit 1
+         if [ ! -f dockerDemo/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar ]; then
+         echo "JAR file not found!"
+         exit 1
+         else
+          echo "JAR file found: dockerDemo/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar"
           fi
 
       - name: Log in to Docker Hub
