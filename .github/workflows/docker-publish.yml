@@ -26,6 +26,13 @@ jobs:
         run: |
           cd dockerDemo
           ./gradlew clean build
+          
+      - name: Ensure JAR file exists
+        run: |
+          if [ ! -f dockerDemo/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar ]; then
+            echo "JAR file not found!"
+            exit 1
+          fi
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
