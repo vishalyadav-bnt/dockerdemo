@@ -19,6 +19,9 @@ jobs:
           java-version: 21  
           distribution: 'microsoft'
 
+      - name: Make gradlew executable
+        run: chmod +x Demo/gradlew
+
       - name: Build the JAR file
         run: cd dockerDemo && ./gradlew build
 
