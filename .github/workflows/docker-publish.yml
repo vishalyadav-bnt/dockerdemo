@@ -44,7 +44,8 @@ jobs:
         
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:latest -f dockerDemo/Dockerfile .
+          cd dockerDemo
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/bnt-zorrofi-docker-repo:latest .
 
       - name: Tag Docker image
         run: |
